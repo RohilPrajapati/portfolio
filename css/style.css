@@ -1,0 +1,31 @@
+.bg_nav{
+    background-color: rgba(232, 232, 232,0.1);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+}
+.m_nav{
+    margin-top:100px;
+}
+.profile_img{
+    width: 350px;
+    height: 350px;
+}
+/* .center_screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+} */
+
+.full_screen{
+    height: 100vh;
+}
+.c_card{
+    width: 260px;
+}
+
+@media only screen and (max-width: 600px) {
+    .c_card{
+        width: 140px;
+    }
+}
