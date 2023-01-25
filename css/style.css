@@ -19,9 +19,14 @@
 
 .full_screen{
     height: 100vh;
+    
 }
-.c_card{
-    width: 260px;
+.c_card7{
+    /* width: 220px; */
+    
+}
+.image_circle{
+    border-radius: 100%;
 }
 
 @media only screen and (max-width: 600px) {
