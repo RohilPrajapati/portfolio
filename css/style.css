@@ -22,12 +22,36 @@
     
 }
 .c_card7{
-    /* width: 220px; */
-    
+    /* width: 220px; */ 
+}
+.skill_title{
+    /* width: 140px; */
+    /* word-break: keep-all; */
+    /* word-wrap: ; */
 }
 .image_circle{
     border-radius: 100%;
 }
+.edu_card{
+    /* background-color: rgb(225, 225, 225); */
+    padding: 20px 30px;
+    border-radius: 20px;
+    margin: 10px 0px;
+}
+.edu{
+    background-color: rgb(213, 213, 213);
+    /* height: 150px; */
+    /* border-radius: 10px; */
+    /* padding: 10px 2px; */
+    /* margin: 2px;  */
+}
+.lg_image{
+    width: 80%;
+    height: 120px;
+    object-fit: contain;
+}
+
+
 
 @media only screen and (max-width: 600px) {
     .c_card{
