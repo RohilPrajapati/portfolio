@@ -21,8 +21,9 @@
     height: 100vh;
     
 }
-.c_card7{
+.c_card{
     /* width: 220px; */ 
+    box-shadow: 5px 3px 10px rgb(115, 114, 114);
 }
 .skill_title{
     /* width: 140px; */
@@ -32,6 +33,9 @@
 .image_circle{
     border-radius: 100%;
 }
+.box_shadow{
+    box-shadow: 5px 5px 10px rgb(115, 114, 114);
+}
 .edu_card{
     /* background-color: rgb(225, 225, 225); */
     padding: 20px 30px;
@@ -40,6 +44,7 @@
 }
 .edu{
     background-color: #d9d9d9;
+    box-shadow: 8px 5px 10px rgb(115, 114, 114);
 }
 .lg_image{
     width: 80%;
