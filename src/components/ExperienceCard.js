@@ -1,0 +1,57 @@
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
+const ExperienceCard = ({ jobTitle, company, startDate, endDate, description }) => {
+  const [showFullDescription, setShowFullDescription] = useState(false);
+
+  const toggleDescription = () => {
+    setShowFullDescription(!showFullDescription);
+  };
+
+  return (
+    <motion.div
+      className="bg-gray-900 bg-opacity-60 backdrop-blur-md border border-gray-700 rounded-xl p-6 shadow-lg hover:scale-105 hover:shadow-2xl transition-transform duration-300"
+      whileHover={{ scale: 1.05 }}
+    >
+      {/* Job Title & Company */}
+      <h2 className="text-2xl font-bold text-white">{jobTitle}</h2>
+      <p className="text-gray-400 mt-1">
+        {company} | {startDate} - {endDate}
+      </p>
+
+      {/* Description */}
+      <div className="mt-4 text-gray-300 text-sm leading-relaxed">
+        <AnimatePresence initial={false}>
+          <motion.div
+            key={showFullDescription ? "full" : "short"}
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.4 }}
+          >
+            <div
+              dangerouslySetInnerHTML={{
+                __html: showFullDescription
+                  ? description
+                  : description.slice(0, 200) + "...",
+              }}
+            />
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Read More / Show Less Button */}
+        <button
+          onClick={toggleDescription}
+          className="mt-2 text-blue-400 hover:text-blue-500 font-medium focus:outline-none"
+        >
+          {showFullDescription ? "Show Less" : "Read More"}
+        </button>
+      </div>
+
+      {/* Timeline Accent */}
+      <div className="absolute -left-4 top-8 w-1 h-full bg-blue-500 rounded"></div>
+    </motion.div>
+  );
+};
+
+export default ExperienceCard;
