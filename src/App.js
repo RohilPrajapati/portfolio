@@ -1,5 +1,5 @@
 import './App.css';
-import {router} from "./router";
+import AppRouter from "./router";
 import {RouterProvider} from "react-router-dom";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
@@ -7,7 +7,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 function App() {
   return (
     <div>
-        <RouterProvider router={router} />
+        <AppRouter />
     </div>
   );
 }

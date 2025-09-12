@@ -6,10 +6,10 @@ const NavBar = () => {
   const [navCollapse, setNavCollapse] = useState(true);
 
   const NAV_ITEM = [
-    { link: "/experience", name: "Experience" },
-    { link: "/education", name: "Education" },
-    { link: "/skills", name: "Skills" },
-    { link: "/projects", name: "Projects" },
+    { link: "experience", name: "Experience" },
+    { link: "education", name: "Education" },
+    { link: "skills", name: "Skills" },
+    { link: "projects", name: "Projects" },
   ];
 
   return (
@@ -21,7 +21,7 @@ const NavBar = () => {
     >
       <div className="max-w-screen-xl flex items-center justify-between mx-auto px-4 py-3">
         {/* Logo */}
-        <Link to="/" className="flex items-center space-x-2">
+        <Link to="home" className="flex items-center space-x-2">
           <span className="text-xl md:text-2xl font-bold text-white">
             Rohil <span className="text-blue-400">Prajapati</span>
           </span>
