@@ -18,7 +18,7 @@ const Home = () => {
 
   return (
     <div className="h-[calc(100vh-64px)] flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white px-6 md:px-12 lg:px-24">
-      <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-6xl gap-12">
+      <div className="flex flex-col-reverse md:flex-row items-center justify-between w-full max-w-6xl gap-12">
         
         {/* Left Section - Text */}
         <motion.div
