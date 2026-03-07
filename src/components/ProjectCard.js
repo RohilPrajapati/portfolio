@@ -52,35 +52,37 @@ const ProjectCard = ({ title, institution, date, objective, details, githubLink,
                         </button>
                     )}
                 </div>
+                <div className="absolute -left-4 top-0 w-1 h-full bg-blue-500 rounded"></div>
+
+
+                {/* GitHub link */}
+                {githubLink && (
+                    <div className="mt-3">
+                        <a
+                            href={githubLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-400 hover:text-blue-500 font-medium"
+                        >
+                            View on GitHub
+                        </a>
+                    </div>
+                )}
+
+                {/* Website link */}
+                {websiteLink && (
+                    <div className="mt-3">
+                        <a
+                            href={websiteLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-400 hover:text-blue-500 font-medium"
+                        >
+                            View on Website
+                        </a>
+                    </div>
+                )}
             </div>
-
-            {/* GitHub link */}
-            {githubLink && (
-                <div className="mt-3">
-                    <a
-                        href={githubLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-400 hover:text-blue-500 font-medium"
-                    >
-                        View on GitHub
-                    </a>
-                </div>
-            )}
-
-            {/* Website link */}
-            {websiteLink && (
-                <div className="mt-3">
-                    <a
-                        href={websiteLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-400 hover:text-blue-500 font-medium"
-                    >
-                        View on Website
-                    </a>
-                </div>
-            )}
 
         </motion.div>
     );

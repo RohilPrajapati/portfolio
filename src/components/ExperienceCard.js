@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { getCleanText } from "../utils/index"
 
 const ExperienceCard = ({ jobTitle, company, startDate, endDate, description }) => {
   const [showFullDescription, setShowFullDescription] = useState(false);
@@ -33,7 +34,7 @@ const ExperienceCard = ({ jobTitle, company, startDate, endDate, description }) 
               dangerouslySetInnerHTML={{
                 __html: showFullDescription
                   ? description
-                  : description.slice(0, 200) + "...",
+                  : getCleanText(description, 250),
               }}
             />
           </motion.div>
@@ -49,7 +50,7 @@ const ExperienceCard = ({ jobTitle, company, startDate, endDate, description }) 
       </div>
 
       {/* Timeline Accent */}
-      <div className="absolute -left-4 top-8 w-1 h-full bg-blue-500 rounded"></div>
+      <div className="absolute -left-4 top-0 w-1 h-full bg-blue-500 rounded"></div>
     </motion.div>
   );
 };
