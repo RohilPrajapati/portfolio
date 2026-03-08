@@ -1,0 +1,161 @@
+[
+    {
+        "id": 1,
+        "jobTitle": "Software Developer",
+        "company": "Dhuni Software",
+        "startDate": "June 2024",
+        "endDate": "Present",
+        "description": "<ul class='list-disc pl-5 space-y-1'>        <li>Developed clean, efficient, and maintainable code utilizing the Django framework to build robust web applications.</li>        <li>Integrated third-party APIs and services to extend application functionality and improve user experience.</li>        <li>Optimized application performance, significantly reducing API response times and enhancing overall efficiency.</li>        <li>Identified, debugged, and resolved complex technical issues, ensuring smooth and seamless application functionality.</li>        <li>Managed and optimized MySQL stored procedures and queries, ensuring efficient data retrieval and system performance.</li>        <li>Improved existing API endpoints by implementing pagination and optimizing SQL queries to minimize server load and database hits.</li>      </ul>",
+        "achievements": [
+            {
+                "id": 1,
+                "title": "API Performance Optimization",
+                "problem": "High API response times reaching >3s, causing user-facing delays.",
+                "investigative_approach": [
+                    "Monitored slow-endpoints to pinpoint inefficient queries and subqueries.",
+                    "Analyzed database execution plans using EXPLAIN ANALYZE to identify bottle-necking queries.",
+                    "Identified latency issues caused by geographical distance between AWS RDS instance and backend application server."
+                ],
+                "solution": [
+                    "Implemented pagination and refactored SQL queries.",
+                    "ORM query optimization avoided N+1 issue using select_related and prefetch_related.",
+                    "Change AWS RDS region closer to backend application server."
+                ],
+                "impact": [
+                    "Reduced average API response times by 30%-80% and significantly improved system throughput, response time.",
+                    "Improvement in SEO faster page load"
+                ],
+                "techStack": [
+                    "Django",
+                    "MySQL",
+                    "AWS RDS",
+                    "Python"
+                ]
+            },
+            {
+                "id": 2,
+                "title": "Asynchronous Task Processing with Celery & Redis",
+                "problem": "High API response times > 5s to 30s and frequent timeouts caused by synchronous processing of heavy tasks like email notifications and report generation/ compute files during the request-response cycle.",
+                "investigative_approach": [
+                    "Profiled API endpoints to identify 'bottleneck' operations that didn't require immediate user feedback.",
+                    "Detected that SMTP handshakes and notification logic were blocking the main execution thread."
+                ],
+                "solution": [
+                    "Decoupled time-consuming tasks from the request-response cycle using Celery and Redis as a message broker.",
+                    "Distributed asynchronous tasks (Email, Notifications, Data Processing) to dedicated Celery workers.",
+                    "Refactored views to return immediate 202 Accepted status while tasks processed in the background."
+                ],
+                "impact": [
+                    "Reduced average API response times from several seconds to milliseconds for core transactions.",
+                    "Achieved a 90% reduction in request timeouts and significantly improved UI responsiveness.",
+                    "Enhanced system scalability by allowing background workers to scale independently of the web server."
+                ],
+                "techStack": [
+                    "Django",
+                    "MySQL",
+                    "Redis",
+                    "Celery",
+                    "Python"
+                ]
+            },
+            {
+                "id": 3,
+                "title": "Payment Integration & Pay-to-Post & Post-and-Pay-Later Workflow",
+                "problem": "The platform was restricted to a free-use model, lacking a revenue stream and a secure method for handling financial transactions for job postings.",
+                "solution": [
+                    "Architected a 'Pay-to-Post' & 'Post-and-Pay-Later' workflow, transforming the database schema from a flat structure to hybrid-transaction-based model.",
+                    "Integrated ConnectIPS API using secure digital signatures (HMAC) and request validation to handle nearly real-time payment confirmations.",
+                    "Implemented 'Webhooks' and 'Success/Failure' callback handlers to verify payment, notify Customer Service Representative to activate job listings and notify customer about success of payment with virtual invoice.",
+                    "Manual reconciliation and fallback mechanism to handle edge-case verification failures (e.g., network timeouts or webhook drops), ensuring transaction integrity and preventing data loss."
+                ],
+                "impact": [
+                    "Enabled the platform's first revenue stream, successfully processing hundreds of transactions within the few month.",
+                    "Automated the payment process, reducing administrative overhead on job listings and payment tracking."
+                ],
+                "techStack": [
+                    "Django",
+                    "ConnectIPS API",
+                    "MySQL",
+                    "Cryptography",
+                    "Webhooks",
+                    "Python"
+                ]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "jobTitle": "Software Intern",
+        "company": "LIS Nepal Pvt. Ltd.",
+        "startDate": "November 2023",
+        "endDate": "May 2024",
+        "description": "<ul class='list-disc pl-5 space-y-1'>        <li>Managed <strong>MySQL</strong> and <strong>PostgreSQL</strong> databases and wrote queries to extract meaningful insights.</li>        <li>Built dynamic web applications using <strong>Laravel</strong> and <strong>CodeIgniter</strong>.</li>        <li>Created responsive and user-friendly interfaces using <strong>React.js</strong>.</li>        <li>Collaborated with the system department to optimize deployment.</li>        <li>Implemented <strong>Python</strong> scripts for cron jobs and automation tasks.</li>      </ul>",
+        "achievements": [
+            {
+                "id": 1,
+                "title": "Attendance Device Integration & Modernization (Legacy Migration)",
+                "problem": "The existing .NET-based service was incompatible with new attendance hardware, resulting in legacy system obsolete.",
+                "investigative_approach": [
+                    "Performed a technical audit of the legacy .NET service to identify incompatibilities with modern attendance device firmware.",
+                    "Reverse-engineered the old dotnet script was not working for new devices.",
+                    "Research on new third party library that use pooling technique to extract data from attendance device"
+                ],
+                "solution": [
+                    "Developed a modern, high-performance Python-based polling service to replace the .NET legacy system.",
+                    "Implemented a system service to support attendance device, ensuring older hardware compatibility."
+                ],
+                "impact": [
+                    "Successfully migrated attendance tracking from legacy script to a modern, Python solution with 100% hardware compatibility.",
+                    "Eliminated the need for manual data reconciliation, ensuring the AMS always reflects real-time attendance data."
+                ],
+                "techStack": [
+                    "Python",
+                    "Legacy System Migration",
+                    "Pooling",
+                    "System Service"
+                ]
+            },
+            {
+                "id": 2,
+                "title": "Resource and Project Tracking & Payroll Reporting",
+                "problem": "Accounting, HR, and Management teams lacked a unified reporting tool to track billable hours, resource allocation, and project time, relying on manual spreadsheet processes.",
+                "investigative_approach": [
+                    "Analyzed business requirements provided by management to define the logic for project tracking and resource utilization tracking.",
+                    "Audited the existing database schema to ensure all necessary time-tracking, project, and employee data points were available for reporting."
+                ],
+                "solution": [
+                    "Developed optimized SQL queries to aggregate project and resource data, ensuring accuracy for financial payroll processes.",
+                    "Implemented server-side filtering and pagination within a Laravel Lumen reporting microservice to handle large-scale data efficiently.",
+                    "Built a React-based frontend tabular dashboard that visualizes resource allocation and project hours for multiple departments, projects etc."
+                ],
+                "impact": [
+                    "Transformed manual reporting into an automated, reliable system, significantly reducing the time spent by the accounting department on payroll preparation.",
+                    "Provided clear visibility into resource utilization, enabling management to identify unallocated resources and project bottlenecks.",
+                    "Established a centralized 'Source of Truth' for project hours, improving data accuracy across HR and Finance workflows."
+                ],
+                "techStack": [
+                    "Laravel Lumen",
+                    "PostgreSQL",
+                    "React",
+                    "SQL Aggregation"
+                ]
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "jobTitle": "Backend Developer",
+        "company": "Starter Nepal Pvt. Ltd.",
+        "startDate": "August 2022",
+        "endDate": "June 2023",
+        "description": "<ul class='list-disc pl-5 space-y-1'>        <li>Planned and developed scalable system architectures.</li>        <li>Designed and developed back-end APIs with <strong>Django (DRF)</strong>.</li>        <li>Implemented <em>JWT authentication</em> for security.</li>        <li>Analyzed data and generated reports as required.</li>        <li>Collaborated with front-end developers for seamless integration.</li>        <li>Provided guidance to junior developers on backend practices.</li>      </ul>"
+    },
+    {
+        "id": 4,
+        "jobTitle": "Backend Intern",
+        "company": "Starter Nepal Pvt. Ltd.",
+        "startDate": "July 2020",
+        "endDate": "April 2021",
+        "description": "<ul class='list-disc pl-5 space-y-1'>        <li>Worked with <strong>Django</strong> ORM, models, URLs, and views.</li>        <li>Built and tested APIs using <strong>Django Rest Framework (DRF)</strong>.</li>        <li>Managed and maintained the database and codebase.</li>        <li>Implemented SQL queries for reporting and analytics.</li>        <li>Wrote <strong>Python</strong> scripts for automation tasks.</li>        <li>Assisted seniors in troubleshooting production bugs.</li>      </ul>"
+    }
+]
