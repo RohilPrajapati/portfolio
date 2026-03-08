@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { getCleanText } from "../utils/index"
-import { useNavigate } from 'react-router-dom';
 import { NavLink, Link } from "react-router-dom";
 
 const ExperienceCard = ({ id, jobTitle, company, startDate, endDate, description }) => {
