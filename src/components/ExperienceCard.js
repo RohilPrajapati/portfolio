@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { getCleanText } from "../utils/index"
 import { NavLink, Link } from "react-router-dom";
 
+
 const ExperienceCard = ({ id, jobTitle, company, startDate, endDate, description }) => {
   const [showFullDescription, setShowFullDescription] = useState(false);
 
