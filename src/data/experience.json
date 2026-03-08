@@ -125,7 +125,7 @@
                 ],
                 "solution": [
                     "Developed optimized SQL queries to aggregate project and resource data, ensuring accuracy for financial payroll processes.",
-                    "Implemented server-side filtering and pagination within a Laravel Lumen reporting microservice to handle large-scale data efficiently.",
+                    "Implemented server-side filtering and pagination within a Laravel Lumen reporting to handle data efficiently.",
                     "Built a React-based frontend tabular dashboard that visualizes resource allocation and project hours for multiple departments, projects etc."
                 ],
                 "impact": [
