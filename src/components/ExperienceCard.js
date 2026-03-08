@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { getCleanText } from "../utils/index"
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 
 const ExperienceCard = ({ id, jobTitle, company, startDate, endDate, description }) => {
@@ -11,7 +11,6 @@ const ExperienceCard = ({ id, jobTitle, company, startDate, endDate, description
     setShowFullDescription(!showFullDescription);
   };
 
-  const navigate = useNavigate();
   return (
     <motion.div
       className="bg-gray-900 bg-opacity-60 backdrop-blur-md border border-gray-700 rounded-xl p-6 shadow-lg hover:scale-105 hover:shadow-2xl transition-transform duration-300"
