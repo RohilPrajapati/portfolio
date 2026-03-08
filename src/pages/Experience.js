@@ -1,68 +1,9 @@
 import React from "react";
 import ExperienceCard from "../components/ExperienceCard";
 import { motion } from "framer-motion";
+import data from '../data/experience.json';
 
-const experienceData = [
-  {
-    jobTitle: "Software Developer",
-    company: "Dhuni Software",
-    startDate: "June 2024",
-    endDate: "Present",
-    description: `
-      <ul class='list-disc pl-5 space-y-1'>
-        <li>Developed clean, efficient, and maintainable code utilizing the Django framework to build robust web applications.</li>
-        <li>Integrated third-party APIs and services to extend application functionality and improve user experience.</li>
-        <li>Optimized application performance, significantly reducing API response times and enhancing overall efficiency.</li>
-        <li>Identified, debugged, and resolved complex technical issues, ensuring smooth and seamless application functionality.</li>
-        <li>Managed and optimized MySQL stored procedures and queries, ensuring efficient data retrieval and system performance.</li>
-        <li>Improved existing API endpoints by implementing pagination and optimizing SQL queries to minimize server load and database hits.</li>
-      </ul>`,
-  },
-  {
-    jobTitle: "Software Intern",
-    company: "LIS Nepal Pvt. Ltd.",
-    startDate: "November 2023",
-    endDate: "May 2024",
-    description: `
-      <ul class='list-disc pl-5 space-y-1'>
-        <li>Managed <strong>MySQL</strong> and <strong>PostgreSQL</strong> databases and wrote queries to extract meaningful insights.</li>
-        <li>Built dynamic web applications using <strong>Laravel</strong> and <strong>CodeIgniter</strong>.</li>
-        <li>Created responsive and user-friendly interfaces using <strong>React.js</strong>.</li>
-        <li>Collaborated with the system department to optimize deployment.</li>
-        <li>Implemented <strong>Python</strong> scripts for cron jobs and automation tasks.</li>
-      </ul>`,
-  },
-  {
-    jobTitle: "Backend Developer",
-    company: "Starter Nepal Pvt. Ltd.",
-    startDate: "August 2022",
-    endDate: "June 2023",
-    description: `
-      <ul class='list-disc pl-5 space-y-1'>
-        <li>Planned and developed scalable system architectures.</li>
-        <li>Designed and developed back-end APIs with <strong>Django (DRF)</strong>.</li>
-        <li>Implemented <em>JWT authentication</em> for security.</li>
-        <li>Analyzed data and generated reports as required.</li>
-        <li>Collaborated with front-end developers for seamless integration.</li>
-        <li>Provided guidance to junior developers on backend practices.</li>
-      </ul>`,
-  },
-  {
-    jobTitle: "Backend Intern",
-    company: "Starter Nepal Pvt. Ltd.",
-    startDate: "July 2020",
-    endDate: "April 2021",
-    description: `
-      <ul class='list-disc pl-5 space-y-1'>
-        <li>Worked with <strong>Django</strong> ORM, models, URLs, and views.</li>
-        <li>Built and tested APIs using <strong>Django Rest Framework (DRF)</strong>.</li>
-        <li>Managed and maintained the database and codebase.</li>
-        <li>Implemented SQL queries for reporting and analytics.</li>
-        <li>Wrote <strong>Python</strong> scripts for automation tasks.</li>
-        <li>Assisted seniors in troubleshooting production bugs.</li>
-      </ul>`,
-  },
-];
+const experienceData = data;
 
 const Experience = () => {
   return (
@@ -94,7 +35,7 @@ const Experience = () => {
       >
         {experienceData.map((experience, index) => (
           <motion.div
-            key={index}
+            key={experience.id}
             variants={{
               hidden: { opacity: 0, y: 40 },
               visible: { opacity: 1, y: 0 },
@@ -102,6 +43,7 @@ const Experience = () => {
             transition={{ duration: 0.6 }}
           >
             <ExperienceCard
+              id={experience.id}
               jobTitle={experience.jobTitle}
               company={experience.company}
               startDate={experience.startDate}

@@ -6,6 +6,8 @@ import Experience from "../pages/Experience";
 import Education from "../pages/Education";
 import Skill from "../pages/Skills";
 import Project from "../pages/Project";
+import ExperienceDetail from "../pages/ExperienceDetail";
+import NotFound from "../components/NotFound";
 
 function AppRouter() {
   return (
@@ -19,6 +21,8 @@ function AppRouter() {
           <Route path="education" element={<Education />} />
           <Route path="skills" element={<Skill />} />
           <Route path="projects" element={<Project />} />
+          <Route path="experienceDetail/:id" element={<ExperienceDetail />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </HashRouter>
