@@ -1,14 +1,17 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { getCleanText } from "../utils/index"
+import { NavLink, Link } from "react-router-dom";
 
-const ExperienceCard = ({ jobTitle, company, startDate, endDate, description }) => {
+
+const ExperienceCard = ({ id, jobTitle, company, startDate, endDate, description }) => {
   const [showFullDescription, setShowFullDescription] = useState(false);
 
   const toggleDescription = () => {
     setShowFullDescription(!showFullDescription);
   };
 
+  const navigate = useNavigate();
   return (
     <motion.div
       className="bg-gray-900 bg-opacity-60 backdrop-blur-md border border-gray-700 rounded-xl p-6 shadow-lg hover:scale-105 hover:shadow-2xl transition-transform duration-300"
@@ -41,12 +44,20 @@ const ExperienceCard = ({ jobTitle, company, startDate, endDate, description }) 
         </AnimatePresence>
 
         {/* Read More / Show Less Button */}
-        <button
-          onClick={toggleDescription}
-          className="mt-2 text-blue-400 hover:text-blue-500 font-medium focus:outline-none"
-        >
-          {showFullDescription ? "Show Less" : "Read More"}
-        </button>
+        <div className="flex justify-between">
+          <button
+            onClick={toggleDescription}
+            className="mt-2 text-blue-400 hover:text-blue-500 font-medium focus:outline-none"
+          >
+            {showFullDescription ? "Show Less" : "Read More"}
+          </button>
+          {showFullDescription && (<NavLink
+            to={`/experienceDetail/${id}`}
+            className="mt-4 px-4 py-1 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-lg shadow-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+          >
+            View Detail
+          </NavLink>)}
+        </div>
       </div>
 
       {/* Timeline Accent */}
