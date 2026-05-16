@@ -50,12 +50,24 @@ const ExperienceCard = ({ id, jobTitle, company, startDate, endDate, description
           >
             {showFullDescription ? "Show Less" : "Read More"}
           </button>
-          {showFullDescription && (<NavLink
-            to={`/experienceDetail/${id}`}
-            className="mt-4 px-4 py-1 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-lg shadow-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-          >
-            View Detail
-          </NavLink>)}
+          {showFullDescription && (
+            <NavLink
+              to={`/experienceDetail/${id}`}
+              className="
+              mt-4 inline-flex items-center justify-center
+              px-4 py-2
+              text-blue-400 bg-gray-800
+              hover:bg-gray-700 hover:text-blue-300
+              active:scale-95
+              text-sm font-semibold
+              rounded-lg shadow-md
+              transition-all duration-200
+              focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900
+            "
+            >
+              View Technical Breakdowns
+            </NavLink>
+          )}
         </div>
       </div>
 
