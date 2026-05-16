@@ -98,7 +98,7 @@
                 "investigative_approach": [
                     "Performed a technical audit of the legacy .NET service to identify incompatibilities with modern attendance device firmware.",
                     "Reverse-engineered the old dotnet script was not working for new devices.",
-                    "Research on new third party library that use pooling technique to extract data from attendance device"
+                    "Research on new third party library that use polling technique to extract data from attendance device"
                 ],
                 "solution": [
                     "Developed a modern, high-performance Python-based polling service to replace the .NET legacy system.",
@@ -111,7 +111,7 @@
                 "techStack": [
                     "Python",
                     "Legacy System Migration",
-                    "Pooling",
+                    "Polling",
                     "System Service"
                 ]
             },
