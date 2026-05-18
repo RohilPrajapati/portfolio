@@ -1,22 +1,24 @@
 import React from "react";
 import SkillCard from "../components/SkillCard";
 import { motion } from "framer-motion";
+import { FaPython, FaDatabase, FaGitAlt, FaLinux, FaDocker, FaPhp, FaJsSquare, FaReact, FaGlobe } from "react-icons/fa";
+import { SiDjango, SiPostgresql, SiCelery, SiMysql } from "react-icons/si";
 
 const skills = [
-  { skillName: "Python", icon: "🐍", description: "Expert in scripting and backend development." },
-  { skillName: "REST API Design", icon: "🌐", description: "Designing efficient and scalable REST APIs with clean endpoints." },
-  { skillName: "Django", icon: "🦄", description: "Robust framework for backend APIs and web apps." },
-  { skillName: "Backend Optimization", icon: "⚡", description: "Optimizing server performance with query optimization and reducing latency." },
-  { skillName: "Database Optimization", icon: "💾", description: "Efficient data storage strategies and indexing for high performance." },
-  { skillName: "Celery", icon: "🔄", description: "Asynchronous tasks and background job processing." },
-  { skillName: "PostgreSQL", icon: "🐘", description: "Relational database management system." },
-  { skillName: "Git", icon: "🔧", description: "Version control for collaboration and project management." },
-  { skillName: "Linux", icon: "🐧", description: "Experienced with Linux environments and shell scripting." },
-  { skillName: "Docker", icon: "🐳", description: "Containerization for dev, testing, and production." },
-  { skillName: "PHP", icon: "🐘", description: "Server-side scripting for dynamic web apps." },
-  { skillName: "JavaScript", icon: "⚡", description: "Creating dynamic, interactive web experiences." },
-  { skillName: "MySQL", icon: "🐬", description: "Managing structured data with relational database systems." },
-  { skillName: "React.js", icon: "⚛️", description: "Reusable, performant UI components for web apps." },
+  { skillName: "Python", icon: <FaPython />, description: "Expert in scripting and backend development." },
+  { skillName: "REST API Design", icon: <FaGlobe />, description: "Designing efficient and scalable REST APIs with clean endpoints." },
+  { skillName: "Django", icon: <SiDjango />, description: "Robust framework for backend APIs and web apps." },
+  { skillName: "Backend Optimization", icon: <FaDatabase />, description: "Optimizing server performance with query optimization and reducing latency." },
+  { skillName: "Database Optimization", icon: <FaDatabase />, description: "Efficient data storage strategies and indexing for high performance." },
+  { skillName: "Celery", icon: <SiCelery />, description: "Asynchronous tasks and background job processing." },
+  { skillName: "PostgreSQL", icon: <SiPostgresql />, description: "Relational database management system." },
+  { skillName: "Git", icon: <FaGitAlt />, description: "Version control for collaboration and project management." },
+  { skillName: "Linux", icon: <FaLinux />, description: "Experienced with Linux environments and shell scripting." },
+  { skillName: "Docker", icon: <FaDocker />, description: "Containerization for dev, testing, and production." },
+  { skillName: "PHP", icon: <FaPhp />, description: "Server-side scripting for dynamic web apps." },
+  { skillName: "JavaScript", icon: <FaJsSquare />, description: "Creating dynamic, interactive web experiences." },
+  { skillName: "MySQL", icon: <SiMysql />, description: "Managing structured data with relational database systems." },
+  { skillName: "React.js", icon: <FaReact />, description: "Reusable, performant UI components for web apps." },
 ];
 
 const Skills = () => {
